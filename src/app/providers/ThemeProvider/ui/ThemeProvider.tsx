@@ -4,15 +4,14 @@ import {
   ThemeContext,
   ThemeContextProps,
   Themes,
-} from "./ThemeContext";
+} from "../lib/ThemeContext";
 
 type Props = {
   children: ReactElement;
 };
 
-const ThemeProvider: FC<Props> = ({ children }) => {
-
-	const [theme, setTheme] = useState<Themes>(
+export const ThemeProvider: FC<Props> = ({ children }) => {
+  const [theme, setTheme] = useState<Themes>(
     (localStorage.getItem(LS_APP_THEME) as Themes) || Themes.LIGHT
   );
 
@@ -29,5 +28,3 @@ const ThemeProvider: FC<Props> = ({ children }) => {
     </ThemeContext.Provider>
   );
 };
-
-export default ThemeProvider;
