@@ -1,5 +1,12 @@
+import { Counter } from "entities/Counter";
+
 const AboutPage = () => {
-  return <div>О нас</div>;
+  return (
+    <div>
+      <p>О сайте</p>
+      <Counter />
+    </div>
+  );
 };
 
 export default AboutPage;
